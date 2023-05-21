@@ -1,0 +1,20 @@
+using System;
+
+public class PalindromeChecker {
+    public static bool IsPalindrome(string text) {
+        string reversedText = "";
+        for (int i = text.Length - 1; i >= 0; i--) {
+            reversedText += text[i];
+        }
+        return text.Equals(reversedText, StringComparison.OrdinalIgnoreCase);
+    }
+
+    public static void Main(string[] args) {
+        string word = "level";
+        if (IsPalindrome(word)) {
+            Console.WriteLine(word + " is a palindrome");
+        } else {
+            Console.WriteLine(word + " is not a palindrome");
+        }
+    }
+}
